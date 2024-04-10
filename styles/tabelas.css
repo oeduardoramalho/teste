@@ -98,6 +98,10 @@ caption {
     margin-top: calc(92vw * 0.0468768311);
 }
 
+.cultos-e-ensaios, .cultos-e-ensaios td, .cultos-e-ensaios tr {
+    width: auto;
+}
+
 .rodape__logo--com-calc {
     height: calc(92vw * 0.1562561038);
     margin: calc(92vw * 0.0341810227) 0 35px;
