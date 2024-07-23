@@ -9,7 +9,6 @@ botoes.forEach(botao => {
 })
 
 function ativarBotao(botao) {
-    debugger
     let botaoConteudoClasse = `conteudo-${botao.id.split('-')[1]}`
     let conteudo = document.getElementsByClassName(botaoConteudoClasse)[0]
 
