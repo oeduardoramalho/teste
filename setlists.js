@@ -1,54 +1,42 @@
-const manhaBt = document.querySelector('.--botao-manha')
-const noiteBt = document.querySelector('.--botao-noite')
-const conteudoManha = document.querySelector('.conteudo-manha')
-const conteudoNoite = document.querySelector('.conteudo-noite')
+const botoes = document.querySelectorAll('.corpo__opcoes-botao')
 
-manhaBt.addEventListener('click', () => {
-    if (manhaBt.classList.contains('opcoes-link-ativo')) {
-        manhaBt.classList.remove('opcoes-link-ativo')
-        conteudoManha.style.animation = 'fade-out .4s forwards'
-        setTimeout(() => {
-            conteudoManha.style.display = 'none'
-        }, 400)
-    } else if (noiteBt.classList.contains('opcoes-link-ativo')) {
-        setTimeout(() => {
-            manhaBt.classList.add('opcoes-link-ativo')
-            conteudoManha.style.display = 'flex'
-            conteudoManha.style.animation = 'fade-in .4s forwards'
-        }, 150)
-        noiteBt.classList.remove('opcoes-link-ativo')
-        conteudoNoite.style.animation = 'fade-out .2s forwards'
-        setTimeout(() => {
-            conteudoNoite.style.display = 'none'
-        }, 200)
-    } else if (!manhaBt.classList.contains('opcoes-link-ativo') && !noiteBt.classList.contains('opcoes-link-ativo')) {
-        manhaBt.classList.add('opcoes-link-ativo')
-        conteudoManha.style.display = 'flex'
-        conteudoManha.style.animation = 'fade-in .4s forwards'
-    }
+botoes.forEach(botao => {
+    let botaoId = botao.id
+    let botaoClicado = document.getElementById(botaoId)
+    botao.addEventListener('click', () => {
+        ativarBotao(botaoClicado)
+    })
 })
 
-noiteBt.addEventListener('click', () => {
-    if (noiteBt.classList.contains('opcoes-link-ativo')) {
-        noiteBt.classList.remove('opcoes-link-ativo')
-        conteudoNoite.style.animation = 'fade-out .4s forwards'
+function ativarBotao(botao) {
+    debugger
+    let botaoConteudoClasse = `conteudo-${botao.id.split('-')[1]}`
+    let conteudo = document.getElementsByClassName(botaoConteudoClasse)[0]
+
+    if (botao.classList.contains('opcoes-link-ativo')) {
+        botao.classList.remove('opcoes-link-ativo')
+        conteudo.style.animation = 'fade-out .4s forwards'
         setTimeout(() => {
-            conteudoNoite.style.display = 'none'
+            conteudo.style.display = 'none'
         }, 400)
-    } else if (manhaBt.classList.contains('opcoes-link-ativo')) {
+    } else if (document.getElementsByClassName('opcoes-link-ativo').length != 0) {
+        botoes.forEach(item => {
+            item.classList.remove('opcoes-link-ativo')
+        })
+        document.querySelectorAll('.corpo__conteudo').forEach(item => {
+          item.style.animation = 'fade-out .2s forwards'
+          setTimeout(() => {
+             item.style.display = 'none'
+          }, 200)
+        })
         setTimeout(() => {
-            noiteBt.classList.add('opcoes-link-ativo')
-            conteudoNoite.style.display = 'flex'
-            conteudoNoite.style.animation = 'fade-in .4s forwards'
-        }, 150)
-        manhaBt.classList.remove('opcoes-link-ativo')
-        conteudoManha.style.animation = 'fade-out .2s forwards'
-        setTimeout(() => {
-            conteudoManha.style.display = 'none'
-        }, 200)
-    } else if (!noiteBt.classList.contains('opcoes-link-ativo') && !manhaBt.classList.contains('opcoes-link-ativo')) {
-        noiteBt.classList.add('opcoes-link-ativo')
-        conteudoNoite.style.display = 'flex'
-        conteudoNoite.style.animation = 'fade-in .4s forwards'
+            botao.classList.add('opcoes-link-ativo')
+            conteudo.style.display = 'flex'
+            conteudo.style.animation = 'fade-in .4s forwards'
+        }, 201)
+    } else if (!botao.classList.contains('opcoes-link-ativo')) {
+        botao.classList.add('opcoes-link-ativo')
+        conteudo.style.display = 'flex'
+        conteudo.style.animation = 'fade-in .4s forwards'
     }
-})
+}
