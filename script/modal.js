@@ -1,8 +1,8 @@
 const janelaModal = document.querySelector('#janela-modal')
-const aviso = document.querySelector('#aviso-1')
+const aviso = document.querySelector('.aviso')
 const modalTexto = document.querySelector('.modal-texto')
 
-const dataFinal = new Date("Sep 21 2024").getTime()
+const dataFinal = new Date("Oct 05 2024").getTime()
 const dataFinalOntem = dataFinal - 86400000
 const dataFinalAmanha = dataFinal + 86400000
 const dataInicial = dataFinal - (86400000 * 5)
