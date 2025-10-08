@@ -462,4 +462,24 @@ document.addEventListener("DOMContentLoaded", () => {
       filterProducts();
     }
   });
+
+  // iOS fix: prevent zoom on input focus by increasing font-size temporarily
+  function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  }
+
+  if (isIOS()) {
+    const originalFontSize = searchBox.style.fontSize || window.getComputedStyle(searchBox).fontSize;
+    const originalButtonFontSize = searchButton.style.fontSize || window.getComputedStyle(searchButton).fontSize;
+
+    [searchBox, searchButton].forEach(el => {
+      el.addEventListener("focus", () => {
+        el.style.fontSize = "16px";
+      });
+
+      el.addEventListener("blur", () => {
+        el.style.fontSize = el === searchBox ? originalFontSize : originalButtonFontSize;
+      });
+    });
+  }
 });
