@@ -247,6 +247,15 @@ body {
   cursor: pointer;
 }
 
+.breadcrum__crum:active,
+.breadcrum__crum-categoria:active,
+.breadcrum__crum-subcategoria:active,
+.breadcrum__crum.active:active,
+.breadcrum__crum-categoria.active:active,
+.subcategorias__botao.breadcrum__crum-subcategoria.active:active {
+  text-decoration: underline;
+}
+
 
 .ordenador {
   align-self: self-end;
