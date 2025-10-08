@@ -55,9 +55,10 @@ body.modal-open {
 }
 
 .modal__gallery-buttons--product {
-  display: none;
+  display: flex;
   justify-content: space-between;
   width: 98%;
+  max-width: 347px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -304,7 +305,7 @@ body.modal-open {
   }
 
   .modal__gallery-buttons--product {
-    display: flex;
+    max-width: none;
   }
 
   .modal__main-img--product {
@@ -379,6 +380,10 @@ body.modal-open {
   .modal__gallery-button--product {
     font-size: 1.65rem;
     padding: 0.45rem 0.5rem;
+  }
+
+  .modal__gallery-button--product:hover {
+    background-color: rgba(0, 0, 0, 0.16);
   }
 
   .modal__tab {
