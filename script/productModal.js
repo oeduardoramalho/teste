@@ -215,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
     modalMainImage.classList.toggle("zoomed");
     modalContent.classList.toggle("zoomed", modalMainImage.classList.contains("zoomed"));
     modalOverlay.classList.toggle("zoomed", modalMainImage.classList.contains("zoomed"));
+    productModalGalleryButtons.classList.toggle("hidden", modalMainImage.classList.contains("zoomed"));
     e.stopPropagation();
   });
 
