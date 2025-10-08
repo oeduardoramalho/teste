@@ -1,0 +1,150 @@
+.cabecalho {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.9rem;
+  background-color: var(--cor-secundaria);
+  position: relative;
+}
+
+
+.cabecalho__logo--container {
+  display: inline-flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+}
+
+.cabecalho__logo {
+  height: 30px;
+}
+
+
+.cabecalho__menu-burger {
+  font-size: 1.62rem;
+  color: var(--cor-principal);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 500;
+  line-height: 45px;
+  width: 36px;
+}
+
+
+.cabecalho__nav {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--preto-claro-1);
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  padding: 0.5rem 0 1.15rem;
+  box-shadow: 0 4px 6px -1px rgba(51,51,51,0.25);
+}
+
+.cabecalho__nav.active {
+  display: flex;
+  z-index: 2000;
+}
+
+.cabecalho__nav__link {
+  margin: 0 2rem;
+  padding: 0.5rem 0;
+  width: calc(100% - 4rem);
+  max-width: 400px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--cor-principal);
+  border-bottom: 1px solid var(--cinza-claro-6);
+  font-weight: 700;
+  text-align: center;
+}
+
+
+@media (min-width: 455px) {
+  .cabecalho {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--cor-secundaria);
+    position: relative;
+  }
+
+  .cabecalho__logo {
+    height: 32px;
+  }
+}
+
+@media (min-width: 826px) {
+  .cabecalho {
+    flex-direction: column;
+    justify-content: none;
+    padding: 1rem 2rem;
+  }
+
+  .cabecalho__logo--container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: auto;
+    width: auto;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .cabecalho__logo {
+    height: 40px;
+    padding: 2px 0 2px 0;
+    margin-bottom: 0.4rem;
+  }
+
+  .cabecalho__menu-burger {
+    display: none;
+  }
+
+  .cabecalho__nav {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    background: none;
+    padding: 1rem 0 0.4rem;
+    box-shadow: none;
+  }
+
+  .cabecalho__nav__link {
+    margin: 0 1rem;
+    padding: 0;
+    width: auto;
+    max-width: none;
+    font-size: 0.9rem;
+    border: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .cabecalho__logo {
+    height: 50px;
+    padding: 5px 0 5px 0;
+    margin-bottom: 0.8rem;
+  }
+
+  .cabecalho__nav {
+    padding: 1rem 0;
+  }
+
+  .cabecalho__nav__link {
+    font-size: 1rem;
+  }
+  
+  .cabecalho__nav__link:focus, .cabecalho__nav__link:focus-visible {
+    outline: 2px solid var(--cor-principal);
+    outline-offset: 4.5px;
+  }
+  
+  .cabecalho__nav__link:active, .cabecalho__nav__link:focus:not(:focus-visible) {
+    outline: none;
+  }
+}

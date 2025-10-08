@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <title>Felici - Catálogo</title>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="catalogo.css">
+    <script src="./script/header.js" defer></script>
+    <script src="./script/productModal.js" defer></script>
+    <script src="./script/categorias.js" defer></script>
+    <script src="./script/ordenador.js" defer></script>
+    <script src="./script/footer.js" defer></script>
+</head>
+
+<body class="corpo">
+  <header class="cabecalho">
+    <a class="cabecalho__logo--container" href="catalogo.html">
+      <img src="./images/cabecalho-logo.png" alt="Felici Logo" class="cabecalho__logo">
+    </a>
+
+    <button class="cabecalho__menu-burger" aria-label="Abrir menu">☰</button>
+    
+    <nav class="cabecalho__nav">
+      <a class="cabecalho__nav__link" href="#">Catálogo</a>
+      <a class="cabecalho__nav__link" href="como-comprar.html">Como comprar</a>
+      <a class="cabecalho__nav__link" href="sobre-nos.html">Sobre nós</a>
+      <a class="cabecalho__nav__link" href="galeria-exclusivos.html">Galeria Exclusivos</a>
+      <a class="cabecalho__nav__link" href="#">Atacado</a>
+      <a class="cabecalho__nav__link" href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1 class="hero__titulo">Porque felicidade é pessoal.</h1>
+    <p class="hero__paragrafo">Itens personalizados para fazer dos seus momentos memórias.</p>
+  </section>
+
+  <section class="categorias">
+    <div class="categorias__busca">
+      <div class="search-box-wrapper">
+        <input type="text" id="searchBox" placeholder="Buscar produtos..." aria-label="Buscar produtos">
+        <button id="clearSearch" type="button">&times;</button>
+      </div>
+      <button id="searchButton" aria-label="Buscar">
+        <svg class="icon-search-box" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+          <path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-400q75 0 127.5-52.5T560-580q0-75-52.5-127.5T380-760q-75 0-127.5 52.5T200-580q0 75 52.5 127.5T380-400Z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="categorias__categorias">
+      <button class="categorias__botao" data-category="todos">Todos</button>
+      <button class="categorias__botao" data-category="brinquedos-e-jogos">Brinquedos e Jogos</button>
+      <button class="categorias__botao" data-category="caixas">Caixas</button>
+      <button class="categorias__botao" data-category="casa-e-decoracao">Casa e Decoração</button>
+      <button class="categorias__botao" data-category="casais-romantico">Casais/Romântico</button>
+      <button class="categorias__botao" data-category="casamento">Casamento</button>
+      <button class="categorias__botao" data-category="cristao">Cristão</button>
+      <button class="categorias__botao" data-category="datas-comemorativas">Datas Comemorativas</button>
+      <button class="categorias__botao" data-category="escritorio-home-office">Escritório/Home Office</button>
+      <button class="categorias__botao" data-category="festas-e-eventos">Festas e Eventos</button>
+      <button class="categorias__botao" data-category="organizacao">Organização</button>
+      <button class="categorias__botao" data-category="presentes-e-lembrancas">Presentes e Lembranças</button>
+    </div>
+
+    <div class="categorias__subcategorias hidden">
+      <div class="subcategorias__grupo hidden" data-parent="brinquedos-e-jogos">
+        <button class="subcategorias__botao" data-subcategory="todos">Todos</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="caixas">
+        <button class="subcategorias__botao" data-subcategory="organizacao">Organização</button>
+        <button class="subcategorias__botao" data-subcategory="porta-joias">Porta-joias</button>
+        <button class="subcategorias__botao" data-subcategory="porta-maquiagens">Porta-maquiagens</button>
+        <button class="subcategorias__botao" data-subcategory="caixas-diversas">Caixas diversas</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="casa-e-decoracao">
+        <button class="subcategorias__botao" data-subcategory="cozinha">Cozinha</button>
+        <button class="subcategorias__botao" data-subcategory="decoracoes-diversas">Decorações diversas</button>
+        <button class="subcategorias__botao" data-subcategory="frases-e-versiculos-de-parede">Frases e versículos de parede</button>
+        <button class="subcategorias__botao" data-subcategory="porta-retratos">Porta-retratos</button>
+        <button class="subcategorias__botao" data-subcategory="quadros">Quadros</button>
+        <button class="subcategorias__botao" data-subcategory="outras-decoracoes-de-parede">Outras decorações de parede</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="casais-romantico">
+        <button class="subcategorias__botao" data-subcategory="caixas">Caixas</button>
+        <button class="subcategorias__botao" data-subcategory="chaveiros">Chaveiros</button>
+        <button class="subcategorias__botao" data-subcategory="porta-retratos">Porta-retratos</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="casamento">
+        <button class="subcategorias__botao" data-subcategory="caixinhas-de-bencaos">Caixinhas de Bênçãos</button>
+        <button class="subcategorias__botao" data-subcategory="centros-de-mesa">Centros de mesa</button>
+        <button class="subcategorias__botao" data-subcategory="lembrancas">Lembranças</button>
+        <button class="subcategorias__botao" data-subcategory="mesa-do-bolo">Mesa do bolo</button>
+        <button class="subcategorias__botao" data-subcategory="placas-de-entrada">Placas de entrada</button>
+        <button class="subcategorias__botao" data-subcategory="topo-do-bolo">Topo do bolo</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="cristao">
+        <button class="subcategorias__botao" data-subcategory="caixinhas-de-bencaos">Caixinhas de Bênçãos</button>
+        <button class="subcategorias__botao" data-subcategory="quadros-e-decoracoes">Quadros e decorações</button>
+        <button class="subcategorias__botao" data-subcategory="versiulos-de-parede">Versículos de parede</button>
+        <button class="subcategorias__botao" data-subcategory="variados">Variados</button>
+      </div>
+      
+      <div class="subcategorias__grupo hidden" data-parent="datas-comemorativas">
+        <button class="subcategorias__botao" data-subcategory="dia-das-maes">Dia das Mães</button>
+        <button class="subcategorias__botao" data-subcategory="dia-dos-namorados">Dia dos Namorados</button>
+        <button class="subcategorias__botao" data-subcategory="natal">Natal</button>
+        <button class="subcategorias__botao" data-subcategory="pascoa">Páscoa</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="escritorio-home-office">
+        <button class="subcategorias__botao" data-subcategory="todos">Todos</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="festas-e-eventos">
+        <button class="subcategorias__botao" data-subcategory="15-anos">15 anos</button>
+        <button class="subcategorias__botao" data-subcategory="centros-de-mesa">Centros de mesa</button>
+        <button class="subcategorias__botao" data-subcategory="enfeites-de-mesa">Enfeites de mesa</button>
+        <button class="subcategorias__botao" data-subcategory="lembrancas">Lembranças</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="organizacao">
+        <button class="subcategorias__botao" data-subcategory="caixas-organizadoras">Caixas organizadoras</button>
+        <button class="subcategorias__botao" data-subcategory="divisorias">Divisórias</button>
+        <button class="subcategorias__botao" data-subcategory="vestuario">Vestuário</button>
+      </div>
+
+      <div class="subcategorias__grupo hidden" data-parent="presentes-e-lembrancas">
+        <button class="subcategorias__botao" data-subcategory="corporativo">Corporativo</button>
+        <button class="subcategorias__botao" data-subcategory="festas">Festas</button>
+        <button class="subcategorias__botao" data-subcategory="igrejas">Igrejas</button>
+        <button class="subcategorias__botao" data-subcategory="chaveiros">Chaveiros</button>
+        <button class="subcategorias__botao" data-subcategory="placas-personalizadas">Placas personalizadas</button>
+        <button class="subcategorias__botao" data-subcategory="porta-retratos">Porta-retratos</button>
+      </div>
+    </div>
+  </section>
+  
+  <div class="breadcrum">
+    <p class="breadcrum__crum">Catálogo</p>
+    <p class="breadcrum__separator-fixed">></p>
+  </div>
+
+  <div class="ordenador">
+    <label for="sortProducts">Classificar por:</label>
+    <select id="sortProducts" name="sort">
+      <option value="alfabetico">A-Z</option>
+      <option value="menor-preco">Menor preço</option>
+      <option value="maior-preco">Maior preço</option>
+    </select>
+  </div>
+
+  <section class="produtos">  
+    <div id="noResultsMessage">
+      Não encontramos nenhum produto que corresponda à pesquisa :(<br>
+      Tente novamente de outra forma!
+    </div>
+
+    <div class="produtos__cartao" loading="lazy"
+      data-product-title="Caixa &quot;Mãe&quot;"
+      data-product-categories="caixas, datas-comemorativas"
+      data-product-subcategories="caixas:caixas-diversas, datas-comemorativas:dia-das-maes"
+      data-product-types="caixas"
+      data-product-price="R$ 19,99"
+      data-product-description="Caixa em MDF personalizada, ideal para presentes."
+      data-product-images="./images/produtos-catalogo/FE-00000028/img1.png,./images/produtos-catalogo/FE-00000028/img2.png,./images/produtos-catalogo/FE-00000028/img3.png"
+
+      data-product-dimensions="20cm X 10cm X 10cm"
+      data-product-material="MDF 3mm"
+      data-product-code="FE-00000028"
+      data-product-included="1 caixa de MDF"
+      data-product-time="Até 2 dias após a confirmação do pedido">
+  
+      <img class="produtos__cartao__img" src="./images/produtos-catalogo/FE-00000028/img1.png" alt="Foto da caixa Mãe">
+      <div class="info">
+        <h3>Caixa "Mãe"</h3>
+        <span class="info__preco">
+          <span class="preco-reais">R$</span>
+          <span class="preco-valor-inteiro">19</span>
+          <span class="preco-valor-centavos">99</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="produtos__cartao" loading="lazy"
+      data-product-title="Porta-copos Dia das Mães"
+      data-product-categories="casa-e-decoracao, datas-comemorativas"
+      data-product-subcategories="casa-e-decoracao:cozinha, datas-comemorativas:dia-das-maes,"
+      data-product-types="porta-copos"
+      data-product-price="R$ 10,99"
+      data-product-indicacao="(cada)"
+      data-product-description="Porta-copos com 10cm de diâmetro, feito em MDF com gravação personalizada e envernizado, ideal para presentear a sua mãe de uma forma especial."
+      data-product-images="./images/produtos-catalogo/FE-00000029/img1.png,./images/produtos-catalogo/FE-00000029/img2.png,./images/produtos-catalogo/FE-00000029/img3.png,./images/produtos-catalogo/FE-00000029/img4.png,./images/produtos-catalogo/FE-00000029/img5.png"
+      
+      data-product-dimensions="10cm X 10cm X 6mm"
+      data-product-material="MDF 3mm"
+      data-product-code="FE-00000029"
+      data-product-included="1 porta-copos"
+      data-product-time="Até 2 dias após a confirmação do pedido"
+      data-product-other="Produto envernizado para proteger em caso de contato com líquidos">
+  
+      <img class="produtos__cartao__img" src="./images/produtos-catalogo/FE-00000029/img1.png" alt="Foto dos porta-copos Dia das Mães">
+      <div class="info">
+        <h3>Porta-copos Dia das Mães</h3>
+        <span class="info__preco">
+          <span class="preco-reais">R$</span>
+          <span class="preco-valor-inteiro">10</span>
+          <span class="preco-valor-centavos">99</span>
+          <span class="preco-info-extra">cada</span>
+        </span>
+      </div>
+    </div>
+    
+    <div class="produtos__cartao" loading="lazy"
+      data-product-title="Chaveiros Dia das Mães"
+      data-product-categories="datas-comemorativas, presentes-e-lembrancas"
+      data-product-subcategories="datas-comemorativas:dia-das-maes, presentes-e-lembrancas:chaveiros"
+      data-product-types="chaveiros"
+      data-product-price="R$ 6,99"
+      data-product-indicacao="(cada)"
+      data-product-description="Chaveiros com 4cm de diâmetro, feitos em MDF com gravação personalizada e envernizados, ideais para presentear a sua mãe de uma forma especial."
+      data-product-images="./images/produtos-catalogo/FE-00000016/img1.png"
+      
+      data-product-dimensions="4cm X 4cm X 3mm"
+      data-product-material="Corpo em MDF 3mm e argola metálica"
+      data-product-code="FE-00000016"
+      data-product-included="1 chaveiro"
+      data-product-time="Até 2 dias após a confirmação do pedido"
+      data-product-other="Produto envernizado para proteger em caso de contato com líquidos"
+      data-product-options="Argola dourada ou prateada">
+  
+      <img class="produtos__cartao__img" src="./images/produtos-catalogo/FE-00000016/img1.png" alt="Foto dos chaveiros Dia das Mães">
+      <div class="info">
+        <h3>Chaveiros Dia das Mães</h3>
+        <span class="info__preco">
+          <span class="preco-reais">R$</span>
+          <span class="preco-valor-inteiro">6</span>
+          <span class="preco-valor-centavos">99</span>
+          <span class="preco-info-extra">cada</span>
+        </span>
+      </div>
+    </div>
+    
+    <div class="produtos__cartao" loading="lazy"
+      data-product-title="Porta-retrato gravação a laser 10x15cm"
+      data-product-categories="casa-e-decoracao, datas-comemorativas, presentes-e-lembrancas, casais-romantico"
+      data-product-subcategories="casa-e-decoracao:porta-retratos, casais-romantico:porta-retratos, datas-comemorativas:dia-das-maes, presentes-e-lembrancas:porta-retratos"
+      data-product-types="porta-retratos"
+      data-product-price="R$ 29,90"
+      data-product-description="Porta-retrato 10x15cm, feitos em MDF com gravação a laser."
+      data-product-images="./images/produtos-catalogo/FE-00000013/img1.png,./images/produtos-catalogo/FE-00000013/img2.png,./images/produtos-catalogo/FE-00000013/img3.png"
+      
+      data-product-dimensions="17cm X 2,5cm X 11cm"
+      data-product-material="MDF 3mm"
+      data-product-code="FE-00000013"
+      data-product-included="1 porta-retrato personalizado"
+      data-product-time="Até 2 dias após a confirmação do pedido">
+  
+      <img class="produtos__cartao__img" src="./images/produtos-catalogo/FE-00000013/img1.png" alt="Foto do porta-retrato gravação a laser 10x15cm">
+      <div class="info">
+        <h3>Porta-retrato gravação a laser 10x15cm</h3>
+        <span class="info__preco">
+          <span class="preco-reais">R$</span>
+          <span class="preco-valor-inteiro">29</span>
+          <span class="preco-valor-centavos">90</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="produtos__cartao" loading="lazy"
+      data-product-title="Porta-joias 3 gavetas gravação personalizada"
+      data-product-categories="caixas, datas-comemorativas"
+      data-product-subcategories="caixas:porta-joias, datas-comemorativas:dia-das-maes"
+      data-product-types="porta-joias"
+      data-product-price="R$ 49,90"
+      data-product-description="Porta-joias de MDF, com 3 gavetas de 4cm de altura com 9 divisórias cada com gravação personalizada."
+      data-product-images="./images/produtos-catalogo/FE-00000049/img1.png,./images/produtos-catalogo/FE-00000049/img2.png,./images/produtos-catalogo/FE-00000049/img3.png,./images/produtos-catalogo/FE-00000049/img4.png"
+      
+      data-product-dimensions="15cm X 15cm X 13,4mm"
+      data-product-material="MDF 3mm"
+      data-product-code="FE-00000049"
+      data-product-included="1 porta-joias"
+      data-product-time="Até 2 dias após a confirmação do pedido"
+      data-product-options="Gravação da frase no topo">
+  
+      <img class="produtos__cartao__img" src="./images/produtos-catalogo/FE-00000049/img1.png" alt="Foto dos Porta-joias 3 gavetas gravação personalizadas">
+      <div class="info">
+        <h3>Porta-joias 3 gavetas gravação personalizadas</h3>
+        <span class="info__preco">
+          <span class="preco-reais">R$</span>
+          <span class="preco-valor-inteiro">49</span>
+          <span class="preco-valor-centavos">90</span>
+        </span>
+      </div>
+    </div>
+
+    <div class="produtos__cartao" loading="lazy"
+      data-product-title="Caixinha de bênçãos"
+      data-product-categories="caixas, casamento, cristao"
+      data-product-subcategories="caixas:caixas-diversas, casamento:caixinhas-de-bencaos, cristao:caixinhas-de-bencaos"
+      data-product-types="caixas"
+      data-product-price="R$ 24,90"
+      data-product-description="As Caixinhas de Bênçãos são pequenas caixas de MDF (cru ou branco) com 50 versículos selecionados para abençoar a sua vida."
+      data-product-images="./images/produtos-catalogo/FE-00000052/img1.png,./images/produtos-catalogo/FE-00000052/img2.png,./images/produtos-catalogo/FE-00000052/img3.png,./images/produtos-catalogo/FE-00000052/img4.png"
+      
+      data-product-dimensions="10cm X 7cm X 9cm"
+      data-product-material="Caixa em MDF 3mm, versículos em papel e argolas em metal"
+      data-product-code="FE-00000052"
+      data-product-included="1 Caixinha de Bênçaos com 50 versíulos"
+      data-product-time="Até 2 dias após a confirmação do pedido"
+      data-product-options="MDF cru ou branco e cor dos versículos">
+  
+      <img class="produtos__cartao__img" src="./images/produtos-catalogo/FE-00000052/img1.png" alt="Foto dos Caixinha de bênçãos">
+      <div class="info">
+        <h3>Caixinha de bênçãos</h3>
+        <span class="info__preco">
+          <span class="preco-reais">R$</span>
+          <span class="preco-valor-inteiro">24</span>
+          <span class="preco-valor-centavos">90</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="rodape" role="contentinfo">
+    <div class="rodape__conteudo">
+      <div class="rodape__coluna rodape__empresa">
+        <button class="rodape__toggle">
+          INFORMAÇÕES SOBRE A EMPRESA
+          <span class="rodape__toggle-icon">></span>
+        </button>
+        <div class="rodape__coluna-container rodape__container-empresa" aria-labelledby="rodape-empresa-title">
+          <p>58.709.355 Eduardo Ramalho Sampaio</p>
+          <p>CNPJ: 58.709.355/0001-34</p>
+					<div class="rodape__localizacao">
+						<svg  class="rodape__icon icon-localizacao" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" aria-hidden="true">
+							<path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 294q122-112 181-203.5T720-552q0-109-69.5-178.5T480-800q-101 0-170.5 69.5T240-552q0 71 59 162.5T480-186Zm0 106Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Zm0-480Z"/>
+						</svg>
+						<p>Brasília-DF<p>
+					</div>
+        </div>
+      </div>
+
+      <div class="rodape__coluna rodape__nav">
+        <button class="rodape__toggle">
+          NAVEGUE PELO SITE
+          <span class="rodape__toggle-icon">></span>
+        </button>
+        <nav class="rodape__coluna-container rodape__container-nav" aria-label="Navegação do rodapé">
+        </nav>
+      </div>
+
+      <div class="rodape__coluna rodape__social">
+        <button class="rodape__toggle">
+          CONTATO
+          <span class="rodape__toggle-icon">></span>
+        </button>
+        <div class="rodape__coluna-container rodape__container-social" aria-label="Contato e redes sociais">
+          <!-- WhatsApp -->
+          <a class="rodape__link" href="https://wa.me/+5561999780796" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da Felici">
+            <i class="rodape__icon fa fa-whatsapp" aria-hidden="true"></i>
+            <span class="rodape__link-label">(61) 99978-0796</span>
+          </a>
+
+          <!-- Instagram -->
+          <a class="rodape__link" href="https://instagram.com/felicipersonal" target="_blank" rel="noopener noreferrer" aria-label="Instagram da Felici">
+            <i class="rodape__icon fa fa-instagram" aria-hidden="true"></i>
+            <span class="rodape__link-label">Instagram</span>
+          </a>
+
+          <!-- E-mail -->
+          <a class="rodape__link" href="mailto:contato@felicipersonal.com" aria-label="Enviar e-mail para Felici">
+            <i class="rodape__icon fa fa-envelope" aria-hidden="true"></i>
+            <span class="rodape__link-label">contato@felicipersonal.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="rodape__versiculo">
+      <p class="rodape__versiculo-texto">"Sim, o Senhor fez coisas grandiosas por nós; que alegria!"</p>
+      <p class="rodape__versiculo-ref">Salmo 126:3</p>
+    </div>
+
+    <div class="rodape__copyright">
+      &copy; <span class="rodape__copyright-year"></span> Felici. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- Modal Produtos -->
+  <div id="productModal" class="modal modal--product" aria-hidden="true">
+    <div class="modal__overlay" data-close></div>
+    <div class="modal__content--product">
+      <button class="modal__close--product" data-close>&times;</button>
+
+      <div class="modal__gallery--product">
+        <div class="modal__gallery-buttons--product">
+          <button id="productModalGalleryButtonPrev" class="modal__gallery-button--product"><</button>
+          <button id="productModalGalleryButtonNext" class="modal__gallery-button--product">></button>
+        </div>
+        <div class="modal__gallery-display--product">
+          <img id="productModalMainImage" class="modal__main-img--product" src="" alt="Product image" />
+          <div id="productModalThumbs" class="modal__thumbs--product"></div>
+        </div>
+      </div>
+
+      <div class="modal__details--product">
+        <h2 id="productModalTitle"></h2>
+        <div id="productModalPrice">
+          <span id="productModalPriceValue"></span>
+          <span id="productModalPriceIndication"></span>
+        </div>
+
+        <!-- Tabs -->
+        <div class="modal__info-tabs">
+          <button class="modal__tab active" data-tab="description">Descrição do Produto</button>
+          <button class="modal__tab" data-tab="specs">Ficha técnica</button>
+        </div>
+
+        <!-- Sections -->
+        <div id="productModalDescription" class="modal__info-section"></div>
+
+        <div id="productModalSpecs" class="modal__info-section hidden">
+          <table class="modal__specs-table">
+            <tbody>
+              <tr><td>Dimensões (L X P X A)</td><td id="specDimensions"></td></tr>
+              <tr><td>Material</td><td id="specMaterial"></td></tr>
+              <tr><td>Código do produto</td><td id="specCode"></td></tr>
+              <tr><td>Itens inclusos</td><td id="specIncluded"></td></tr>
+              <tr><td>Prazo de confecção</td><td id="specTime"></td></tr>
+              <tr><td>Outras informações</td><td id="specOther"></td></tr>
+              <tr><td>Opções</td><td id="specOptions"></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
